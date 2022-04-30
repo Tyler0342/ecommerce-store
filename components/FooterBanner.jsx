@@ -1,6 +1,6 @@
 import React from 'react'
 
-const FooterBanner = ({ footerBanner: discount, largeText1, largeText2, saleTime }) => {
+const FooterBanner = ({ footerBanner: discount, largeText1, largeText2, saleTime, smallText, midText, desc, product, buttonText, image }) => {
   return (
     <div className='footer-banner-container'>
       <div className='banner-desc'>
@@ -11,8 +11,14 @@ const FooterBanner = ({ footerBanner: discount, largeText1, largeText2, saleTime
           <p>{saleTime}</p>
         </div>
         <div className='right'>
-
+            <p>{smallText}</p>
+            <h3>{midText}</h3>
+            <p>{desc}</p>
+            <Link href={`/product/${product}`}>
+              <button type='button'>{buttonText}</button>
+            </Link>
         </div>
+        <img src={urlFor(image)} className='footer-banner-image' />
       </div>
     </div>
   )
